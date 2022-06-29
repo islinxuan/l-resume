@@ -4,54 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+
+    <!---------- CSS ---------->
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>林轩 | Resume on Github Pages</title>
+    <title>林轩 | l-resume</title>
   </head>
   <body>
-    <div class="App">
-      <!-- 功能区 -->
-      <div class="features">
-        <button disabled><img src="image/download-two.svg" alt="">下载</button>
-        <button disabled><img src="image/translate.svg" alt="">中文</button>
-      </div>
-      <!-- 简历 -->
+    <div class="bd-container">
+      <!---------- 功能区 ---------->
+      <header class="features">
+        <button disabled><img src="assets/img/download-two.svg" alt="">下载</button>
+        <button disabled><img src="assets/img/translate.svg" alt="">中文</button>
+      </header>
+
+      <!---------- 简历 ---------->
       <main class="resume ">
-        <header id="contact-info">
-          <!-- <h1>求职简历</h1> -->
-          <address>
-            <span id="name">林轩</span>
-            <span class="nobody">在校生</span>
-            <ul class="contacts">
-              <li>邮箱：<a href="mailto:islinxuan@qq.com">islinxuan@qq.com</a></li>
-              <li>微信：wxvbkjqsmnee</li>
-              <li>
-                <!-- ugly!!! -->
-                Github: <a href="https://github.com/islinxuan">https://github.com/islinxuan</a>
-              </li>
-            </ul>
-          </address>
-          <img id="headcut" src="image/LinXuan.jpg" alt="求职简历头像">
-        </header>
-        <!-- 教育背景 / 工作经历 -->
-        <section id="experiences">
-          <h2>教育经历</h2>
-          <div class="education">
-            <h3 class="university to-start">深圳大学</h3>
-            <p class="data to-end">
+        <!---------- 联系信息 ---------->
+        <section class="section grid-8-cols" id="contacts">
+          <h1 class="my-name">林轩</h1>
+          <p class="nobody">在校生</p>
+          <ul>
+            <li>邮箱：<a href="mailto:islinxuan@qq.com">islinxuan@qq.com</a></li>
+            <li>微信：wxvbkjqsmnee</li>
+            <li>
+              <!-- ugly!!! -->
+              Github: <a href="https://github.com/islinxuan">https://github.com/islinxuan</a>
+            </li>
+          </ul>
+          <img src="assets/img/LinXuan.jpg" alt="求职照" class="headcut">
+        </section>
+
+        <!---------- 教育/工作经历 ---------->
+        <section class="section" id="experiences">
+          <h2 class="section-title">教育经历</h2>
+          <div class="education grid-8-cols">
+            <h3 class="university extra-title">深圳大学</h3>
+            <p class="intro">地理空间信息工程 本科 建筑与城市规划学院</p>
+            <p class="data">
               <time datetime="2019-09">2019 年 9 月</time> - <time datetime="2023-07">2023 年 7 月</time>
             </p>
-            <p class="intro to-start">地理空间信息工程 本科 建筑与城市规划学院</p>
-            <p class="city to-end">深圳</p>
+            <p class="city">深圳</p>
           </div>
         </section>
-        <!-- 主要项目 -->
-        <section id="projects">
-          <h2>项目经历</h2>
-          <div class="project">
-            <h3>搭建深圳地铁相关图表网站</h3>
-            <span class="nobody">组员</span>
+
+        <!---------- 主要项目 ---------->
+        <section class="section" id="projects">
+          <h2 class="section-title">项目经历</h2>
+          <div class="project grid-8-cols">
+            <h3 class="project-name extra-title">深圳地铁信息可视化</h3>
+            <p class="intro nobody">组员</p>
             <ul class="details">
               <li>根据已分配任务，参考深圳地铁官网等网站，规划网站内容结构和布局，并与小组定期交流，同步项目进度。</li>
               <li>为网站图表的数据切换问题提供建议，并添加简单的网站侧栏交互。</li>
@@ -59,8 +63,9 @@
               </li>
             </ul>
           </div>
-          <div class="project">
-            <h3>深圳南山科技园城市活力分析</h3>
+          <div class="project grid-8-cols">
+            <h3 class="project-name extra-title">深圳南山科技园活力分析</h3>
+            <p class="intro nobody">个人</p>
             <ul class="details">
               <li>了解相关理论，收集南山科技园目标区域的地理位置数据，以及楼层、POI 等有关数据。</li>
               <li>利用 ArcGIS 对原始数据进行格式转换、筛选等预处理，并计算建筑物占地密度、建筑物容积率和 POI 密度等指标，再制图出图。</li>
@@ -68,20 +73,28 @@
             </ul>
           </div>
         </section>
-        <!-- 技能及其他 -->
-        <section id="skills">
-          <h2>技能及其他</h2>
-          <ul class="details">
-            <li>了解 HTML5 / CSS3 / JavaScript 前端技术，掌握基本的页面编程调试和开发工具，具有一定的编程基础。</li>
-            <li>具有使用 ArcGIS / QGIS 等 GIS 相关知识，以及有共同使用 PostgreSQL 数据库的经验。</li>
-            <li>英语：CET4，能够读懂相关技术文档、博文等的大意。</li>
-            <li>掌握 Word、Excel、PowerPoint 等办公软件的基础操作。</li>
-            <li>乐于学习 Web 和 GIS 相关技术，有良好沟通能力以及团队协作精神。</li>
-          </ul>
+
+        <!---------- 技能及其他 ---------->
+        <section class="section" id="skills">
+          <h2 class="section-title">技能及其他</h2>
+          <div>
+            <ul class="details">
+              <li>了解 HTML5 / CSS3 / JavaScript 前端技术，掌握基本的页面编程调试和开发工具，具有一定的编程基础。</li>
+              <li>具有使用 ArcGIS / QGIS 等 GIS 相关知识，以及有共同使用 PostgreSQL 数据库的经验。</li>
+              <li>英语：CET4，能够读懂相关技术文档、博文等的大意。</li>
+              <li>掌握 Word、Excel、PowerPoint 等办公软件的基础操作。</li>
+            </ul>
+          </div>
+          <div class="others">
+            <ul class="details">
+              <li>乐于学习 Web 和 GIS 相关技术，有良好沟通能力以及团队协作精神。</li>
+            </ul>
+          </div>
         </section>
       </main>
-      <!-- 脚注 -->
-      <footer>
+
+      <!---------- 脚注 ---------->
+      <footer class="footnotes">
         <p><a href="https://github.com/islinxuan/l-resume">islinxuan/l-resume</a></p>
         <p>&copy; 2022 LinXuan</p>
       </footer>

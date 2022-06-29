@@ -1,0 +1,227 @@
+:root {
+  --body-font: "Times New Roman", serif;
+
+  /********** font size **********/
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .875rem;
+
+  /********** font weight **********/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+
+  /********** color **********/
+  --title-color: #0B0A0A;
+  --text-color: #212529;
+  --text-color-light: #495057;
+  --link-color: #1971c2;
+  --body-color: #FCFCFC;
+  --container-color: #FFFFFF;
+
+  /********** margin **********/
+  --mb-1: .75rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+}
+
+
+/********** CSS base **********/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  color: var(--text-color);
+  background-color: var(--body-color);
+}
+
+
+/********** CSS tags **********/
+li,
+p {
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+a:link,
+a:visited {
+  color: var(--link-color);
+}
+
+a:hover,
+a:active {
+  color: currentColor;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+  background-color: inherit;
+  padding: 4px 8px;
+  border: 0.5px solid currentColor;
+  cursor: pointer;
+  display: flex;
+  gap: 4px;
+}
+
+button[disabled] {
+  cursor: not-allowed;
+}
+
+
+/********** CSS class **********/
+.bd-container {
+  max-width: 768px;
+  margin: 0 auto;
+  background-color: var(--container-color);
+  box-shadow: 0 0 4px #dadce0;
+}
+
+.section {
+  margin-bottom: var(--mb-3);
+}
+
+.section-title {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-semibold);
+  color: var(--title-color);
+  margin: var(--mb-2) 0;
+  border-bottom: 1px solid currentColor;
+}
+
+.section>div {
+  margin-bottom: var(--mb-1);
+}
+
+.extra-title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semibold);
+  color: var(--title-color);
+  margin: 0;
+}
+
+.grid-8-cols {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  row-gap: 8px;
+  align-items: center;
+}
+
+.nobody {
+  padding: 0 4px;
+  border-left: 2px solid #1971c2;
+  margin: 0;
+}
+
+.details {
+  margin-left: 12px;
+}
+
+.details li::before {
+  content: "•";
+  display: block;
+  position: absolute;
+  margin-left: -12px;
+}
+
+/********** 功能区和脚注 **********/
+.features,
+.footnotes {
+  display: flex;
+  padding: 12px 24px;
+}
+
+.features {
+  justify-content: flex-end;
+  gap: 16px;
+  border-bottom: 1px dashed currentColor;
+}
+
+.footnotes {
+  justify-content: space-between;
+  border-top: 1px dashed currentColor;
+}
+
+.footnotes p {
+  font-weight: var(--font-regular);
+  color: var(--text-color-light);
+  margin: 2px 0;
+}
+
+
+/********** 简历 **********/
+.resume {
+  padding: 64px 40px;
+}
+
+/********** 联系信息 **********/
+.my-name {
+  grid-column: 1 / span 7;
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semibold);
+  color: var(--title-color);
+  margin: 0;
+}
+
+#contacts .nobody {
+  grid-row: 2 / 3;
+  grid-column: 1 / span 7;
+}
+
+#contacts ul {
+  grid-row: 3 / 4;
+  grid-column: 1 / span 7;
+  /* margin: 8px 0; */
+}
+
+.headcut {
+  grid-row: 1 / span 3;
+  width: 100%;
+  height: auto;
+}
+
+/********** 教育/工作经历等 **********/
+.project-name,
+.university {
+  grid-column: 1 / span 6;
+}
+
+.intro {
+  grid-row: 2 / 3;
+  grid-column: 1 / span 6;
+}
+
+.education p {
+  display: inline;
+  margin: 0;
+}
+
+.data,
+.city {
+  grid-column: -3 / -1;
+  justify-self: end;
+}
+
+.details {
+  grid-column: 1 / -1;
+  gap: 8px;
+}
